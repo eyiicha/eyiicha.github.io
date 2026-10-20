@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study | Ericha Ameilia</title>
+<meta name="description" content="A case study from Ericha Ameilia's portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="merged.css">
+<link rel="stylesheet" href="case.css">
+</head>
+<body class="no-js">
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="nav__logo" href="index.html" aria-label="Signmeilia, home"><img src="assets/signmeilia-logo.svg" alt="Signmeilia"></a>
+    <div class="nav__right">
+      <nav class="nav__links" aria-label="Main">
+        <a href="projects.html" class="active">Work</a>
+        <a href="index.html#journey">Experience</a>
+        <a href="https://drive.google.com/file/d/1sFN4XBQd8MXF_A1-J4B5y1EkDxADbrXs/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+      </nav>
+      <a class="btn nav__cta" href="index.html#contact">Let's connect</a>
+    </div>
+  </div>
+</header>
+
+<main id="case">
+  <noscript><div class="wrap cs-missing"><h1>This case study needs JavaScript.</h1><p><a href="projects.html">Back to all projects</a></p></div></noscript>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="fcard">
+      <div class="fcard__grid">
+        <div class="fcard__me"><img src="assets/portrait.jpg" alt=""><p>Multidisciplinary designer turning ideas into apps, brands, feeds and short videos.</p></div>
+        <nav aria-label="Quick links"><span class="label">Quick links</span><a href="projects.html">Work</a><a href="index.html#journey">Experience</a><a href="https://drive.google.com/file/d/1sFN4XBQd8MXF_A1-J4B5y1EkDxADbrXs/view?usp=sharing" target="_blank" rel="noopener">Resume</a><a href="index.html#contact">Let's connect</a></nav>
+        <nav aria-label="Get in touch"><span class="label">Get in touch</span>
+          <a href="mailto:erichaameiliaputri@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>erichaameiliaputri@gmail.com</a>
+          <a href="https://www.linkedin.com/in/erichaameilia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>Ericha Ameilia</a>
+        </nav>
+      </div>
+      <div class="fcard__bottom"><span>© 2026 Ericha Ameilia Putri</span><span>Signmeilia design co. · Indonesia</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="projects-data.js"></script>
+<script src="cases-data.js"></script>
+<script>
+  /* render one case study from cases-data.js, picked by ?id= */
+  (() => {
+    const id = new URLSearchParams(location.search).get('id');
+    const c = CASES[id];
+    const main = document.getElementById('case');
+    if (CASES[id]) main.classList.add('cs-' + id);
+    const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    if (!c) {
+      main.innerHTML = `<div class="wrap cs-missing"><h1>That case study isn't on the shelf.</h1><p><a class="btn btn-dark" href="projects.html">See all projects</a></p></div>`;
+      return;
+    }
+    document.title = `${c.short} | Ericha Ameilia`;
+    const img = (src, alt, cls = '') => `<img class="${cls}" src="${src.startsWith('./') ? src : CS_ASSET + src}" alt="${esc(alt || '')}" loading="lazy">`;
+    const head = b => (b.label || b.title || b.body) ? `
+      <div class="cs-head rv">
+        ${b.label ? `<span class="label">${esc(b.label)}</span>` : ''}
+        ${b.title ? `<h2>${esc(b.title)}</h2>` : ''}
+        ${[].concat(b.body || []).map(p => `<p>${esc(p)}</p>`).join('')}
+      </div>` : '';
+
+    const blocks = {
+      text: b => '',
+      cards: b => `<div class="cs-cards cols-${b.cols || 3}" data-stagger>${b.items.map((it, i) => `
+        <div class="cs-card rv">
+          ${b.numbered ? `<span class="cs-card__n">${String(i + 1).padStart(2, '0')}</span>` : ''}
+          ${it.tag ? `<span class="cs-card__tag">${esc(it.tag)}</span>` : ''}
+          <h3>${esc(it.t)}</h3>${it.d ? `<p>${esc(it.d)}</p>` : ''}
+          ${it.list ? `<ul>${it.list.map(l => `<li>${esc(l)}</li>`).join('')}</ul>` : ''}
+          ${it.foot ? `<b class="cs-card__foot">${esc(it.foot)}</b>` : ''}
+        </div>`).join('')}</div>`,
+      flow: b => `<div class="cs-flow rv">${b.steps.map(s => `<span>${esc(s)}</span>`).join('<i aria-hidden="true">→</i>')}</div>`,
+      images: b => `<div class="cs-imgs cols-${b.cols || 1}${b.phones ? ' is-phones' : ''}" style="--n:${b.items.length}" data-stagger>${b.items.map(it => `
+        <figure class="rv">${img(it.src, it.alt)}${it.cap || it.d ? `<figcaption>${it.cap ? `<b>${esc(it.cap)}</b>` : ''}${it.d ? `<span>${esc(it.d)}</span>` : ''}</figcaption>` : ''}</figure>`).join('')}</div>`,
+      beforeafter: b => `<div class="cs-ba" data-stagger>
+        <figure class="rv"><span class="cs-pill">Before</span>${img(b.before, 'Before')}</figure>
+        <figure class="rv"><span class="cs-pill is-on">Redesign</span>${img(b.after, 'Redesign')}</figure></div>`,
+      compare: b => `<div class="cs-compare" data-stagger>${[b.left, b.right].map((s, i) => `
+        <div class="cs-compare__col rv${i ? ' is-on' : ''}"><h3>${esc(s.title)}</h3><ol>${s.items.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>`).join('')}</div>`,
+      works: b => `<div class="cs-works">${b.items.map(w => `
+        <article class="cs-work rv">
+          <div class="cs-work__media${w.videos.length > 1 ? ' is-many' : ''}">${w.videos.map(v => `
+            <a class="cs-video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener" aria-label="Watch ${esc(w.brand)} on YouTube">
+              ${img(v.thumb, w.brand)}<span class="cs-play" aria-hidden="true">▶</span></a>`).join('')}</div>
+          <div class="cs-work__text">
+            <span class="label">${esc(w.brand)}</span>
+            <h3>${esc(w.title)}</h3>
+            ${[].concat(w.body).map(p => `<p>${esc(p)}</p>`).join('')}
+            <div class="cs-chips"><b>My contribution</b>${w.did.map(d => `<span class="chip">${esc(d)}</span>`).join('')}</div>
+          </div>
+        </article>`).join('')}</div>`,
+      // a drawn diagram (an SVG file), inlined after render so it picks up the page fonts
+      diagram: b => `<div class="cs-diagram rv" data-svg="${b.src}" role="img" aria-label="${esc(b.alt || '')}"></div>`,
+      quote: b => `<div class="cs-quote rv"><span class="label">Reflection</span><blockquote>${esc(b.quote)}</blockquote>${[].concat(b.body).map(p => `<p>${esc(p)}</p>`).join('')}</div>`,
+    };
+
+    const keys = Object.keys(CASES);
+    const next = CASES[keys[(keys.indexOf(id) + 1) % keys.length]];
+    const nextId = keys[(keys.indexOf(id) + 1) % keys.length];
+
+    main.innerHTML = `
+      <section class="cs-hero">
+        <div class="wrap">
+          <a class="cs-back" href="projects.html#${c.field}">← Back to ${esc(c.fieldName)}</a>
+          <span class="mix-tag">${esc(c.label)}</span>
+          <h1 class="cs-title">${esc(c.title)}</h1>
+          <p class="cs-intro">${esc(c.intro)}</p>
+          ${c.link ? `<a class="btn btn-dark cs-live" href="${c.link.href}" target="_blank" rel="noopener">${esc(c.link.label)} <span aria-hidden="true">↗</span></a>` : ""}
+          <dl class="cs-meta">${c.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+        </div>
+        <div class="wrap"><figure class="cs-cover">${img(c.cover, c.short + ' cover')}</figure></div>
+      </section>
+      ${c.blocks.map(b => {
+        // a lone image, one or two phone screens, or a flow sit beside their copy instead of under it,
+        // unless the block asks to stay stacked so its visual can run full width
+        const split = !b.stack && (b.title || b.body) &&
+          ((b.type === 'images' && ((b.cols || 1) === 1 || (b.phones && b.items.length <= 2))) || b.type === 'flow');
+        return `<section class="cs-sec t-${b.type}${b.tone ? ' is-' + b.tone : ''}${split ? ' is-split' : ''}"><div class="wrap">${b.type === 'quote' ? '' : head(b)}${blocks[b.type](b)}</div></section>`;
+      }).join('')}
+      <section class="cs-next"><div class="wrap">
+        <a class="cs-next__card" href="case.html?id=${nextId}">
+          <span class="label">Next case study</span>
+          <h2>${esc(next.short)}</h2>
+          <p>${esc(next.title)}</p>
+          <span class="cs-next__img">${img(next.cover, next.short)}</span>
+        </a>
+      </div></section>`;
+
+    // diagrams are inlined rather than used as <img>, so their text renders in the site font
+    // opened straight from disk (file://) the fetch is blocked, so fall back to a plain image
+    main.querySelectorAll('[data-svg]').forEach(el => fetch(el.dataset.svg).then(r => r.text()).then(svg => { el.innerHTML = svg; })
+      .catch(() => { el.innerHTML = `<img src="${el.dataset.svg}" alt="${el.getAttribute('aria-label') || ''}" style="width:100%;min-width:1100px;display:block">`; }));
+
+    // only truly tall images (phone screens, vertical videos) are shown whole inside their 16:9 frame;
+    // dashboards and everything else fill the frame, zoomed in from the top
+
+    const markTall = im => { if (im.naturalHeight > im.naturalWidth * 1.4) im.classList.add('is-tall'); };
+    main.querySelectorAll('img').forEach(im => im.complete ? markTall(im) : im.addEventListener('load', () => markTall(im), { once: true }));
+    // UTVIP shots are shown whole; blowing the shot's top-left corner up behind it fills the spare frame in its own backdrop colour
+    if (id === 'utvip') main.querySelectorAll('.cs-imgs img, .cs-cover img').forEach(im => { im.style.background = `url("${im.src}") 0 0 / 10000% 10000% no-repeat`; });
+  })();
+</script>
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" role="img" aria-labelledby="uf-title">
+<title id="uf-title">GoFleet user flow: from a request to the trip history, across the coordinator, the requester and the system</title>
+<defs><marker id="uf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8f8486"/></marker></defs>
+<style>
+  .a{fill:#faf7f7;stroke:#ebe5e5;stroke-width:1.2}
+  .a-label{fill:#66020b}
+  .a-text{font:700 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;fill:#fff;text-transform:uppercase}
+  .n{fill:#fff;stroke:#cdc3c4;stroke-width:1.3}
+  .n-dec{fill:#fff;stroke:#66020b;stroke-width:1.4;stroke-dasharray:5 4}
+  .n-key{fill:#fbeef0;stroke:#66020b}
+  .n-warn{fill:#fff;stroke:#66020b;stroke-dasharray:4 3}
+  .n-stop{fill:#0d0b0c;stroke:#0d0b0c}
+  .n-start{fill:#0d0b0c;stroke:#0d0b0c}
+  .t{font:600 12.5px 'Plus Jakarta Sans',sans-serif;fill:#0d0b0c;text-anchor:middle;dominant-baseline:middle}
+  .t-inv{fill:#fff}
+  .e{fill:none;stroke:#8f8486;stroke-width:1.4;stroke-linejoin:round}
+  .e-dash{stroke-dasharray:6 5}
+  .el{font:700 11px 'Plus Jakarta Sans',sans-serif;fill:#66020b}
+</style>
+<rect class="a" x="20" y="60" width="510" height="525" rx="18"/>
+<rect class="a-label" x="36" y="47" width="150" height="26" rx="13"/><text class="a-text" x="49" y="64">Coordinator</text>
+<rect class="a" x="560" y="60" width="600" height="525" rx="18"/>
+<rect class="a-label" x="576" y="47" width="130" height="26" rx="13"/><text class="a-text" x="589" y="64">Requester</text>
+<rect class="a" x="1190" y="60" width="400" height="525" rx="18"/>
+<rect class="a-label" x="1206" y="47" width="180" height="26" rx="13"/><text class="a-text" x="1219" y="64">GoFleet system</text>
+<path class="e" d="M810 408L810 442" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M885 470L905 470" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1025 470L1045 470" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1145 470L1220 470" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1280 410L1280 380L1400 380" marker-end="url(#uf-arrow)"/><text class="el" x="1290" y="372" >Yes, no notes</text>
+<path class="e" d="M1280 530L1280 545L1400 545" marker-end="url(#uf-arrow)"/><text class="el" x="1288" y="563" >Contested or noted</text>
+<path class="e" d="M1540 380L1560 380L1560 40L640 40L640 122" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1540 545L1570 545L1570 600L25 600L25 330L35 330" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M110 302L110 190L200 190" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M320 190L330 190L330 120L345 120" marker-end="url(#uf-arrow)"/><text class="el" x="324" y="150" text-anchor="end">Yes</text>
+<path class="e" d="M330 190L330 250L345 250" marker-end="url(#uf-arrow)"/><text class="el" x="324" y="236" text-anchor="end">No</text>
+<path class="e" d="M495 120L530 120L530 155L570 155" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M495 250L530 250L530 155" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M185 345L275 345" marker-end="url(#uf-arrow)"/><text class="el" x="230" y="337" text-anchor="middle">Needs info</text>
+<path class="e" d="M110 358L110 470L275 470" marker-end="url(#uf-arrow)"/><text class="el" x="192" y="462" text-anchor="middle">Can’t be met</text>
+<path class="e e-dash" d="M405 345L545 345L545 300L582 300" marker-end="url(#uf-arrow)"/>
+<path class="e e-dash" d="M698 300L1392 300L1392 530L1400 530" marker-end="url(#uf-arrow)"/><text class="el" x="900" y="292" text-anchor="middle">Back to the queue</text>
+<path class="e" d="M405 470L565 470" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M715 470L735 470" marker-end="url(#uf-arrow)"/><text class="el" x="725" y="516" text-anchor="middle">Request again</text>
+<path class="e" d="M710 150L745 150" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M855 150L895 150" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1005 150L1012 150L1012 100L1025 100" marker-end="url(#uf-arrow)"/><text class="el" x="1006" y="92" >Yes</text>
+<path class="e" d="M1012 150L1012 210L1025 210" marker-end="url(#uf-arrow)"/><text class="el" x="1006" y="232" >No</text>
+<path class="e" d="M1145 100L1210 100" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1350 100L1395 100" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1145 210L1180 210L1180 235L1220 235" marker-end="url(#uf-arrow)"/>
+<path class="e" d="M1340 235L1578 235L1578 25L1085 25L1085 72" marker-end="url(#uf-arrow)"/><text class="el" x="1330" y="19" text-anchor="middle">No</text>
+<path class="e" d="M1280 295L1280 320L1586 320L1586 615L12 615L12 545L35 545" marker-end="url(#uf-arrow)"/><text class="el" x="1290" y="314" >Yes</text>
+<path class="e e-dash" d="M185 545L200 545L200 578L1385 578L1385 560L1400 560" marker-end="url(#uf-arrow)"/><text class="el" x="700" y="572" text-anchor="middle">Next booking clashes</text>
+<rect class="n" x="35" y="302" width="150" height="56" rx="10"/><text x="110" y="322.5" class="t"><tspan x="110" >Opens the</tspan><tspan x="110" dy="15">request</tspan></text>
+<path class="n n-dec" d="M260 130L320 190L260 250L200 190Z"/><text x="260" y="175" class="t"><tspan x="260" >An option</tspan><tspan x="260" dy="15">where nobody</tspan><tspan x="260" dy="15">loses out?</tspan></text>
+<rect class="n n-key" x="345" y="92" width="150" height="56" rx="10"/><text x="420" y="112.5" class="t"><tspan x="420" >Confirms the</tspan><tspan x="420" dy="15">system’s suggestion</tspan></text>
+<rect class="n n-warn" x="345" y="222" width="150" height="56" rx="10"/><text x="420" y="242.5" class="t"><tspan x="420" >Chooses who</tspan><tspan x="420" dy="15">carries the cost</tspan></text>
+<rect class="n" x="275" y="317" width="130" height="56" rx="10"/><text x="340" y="337.5" class="t"><tspan x="340" >Asks the</tspan><tspan x="340" dy="15">requester</tspan></text>
+<rect class="n n-stop" x="275" y="442" width="130" height="56" rx="10"/><text x="340" y="462.5" class="t t-inv"><tspan x="340" >Rejects with</tspan><tspan x="340" dy="15">a reason</tspan></text>
+<rect class="n" x="35" y="517" width="150" height="56" rx="10"/><text x="110" y="537.5" class="t"><tspan x="110" >Handles it in</tspan><tspan x="110" dy="15">“Needs attention”</tspan></text>
+<rect class="n n-key" x="570" y="122" width="140" height="56" rx="10"/><text x="640" y="142.5" class="t"><tspan x="640" >Gets a</tspan><tspan x="640" dy="15">confirmed car</tspan></text>
+<rect class="n" x="745" y="122" width="110" height="56" rx="10"/><text x="800" y="150" class="t"><tspan x="800" >Departs</tspan></text>
+<path class="n n-dec" d="M950 95L1005 150L950 205L895 150Z"/><text x="950" y="142.5" class="t"><tspan x="950" >Back on</tspan><tspan x="950" dy="15">schedule?</tspan></text>
+<rect class="n" x="1025" y="72" width="120" height="56" rx="10"/><text x="1085" y="92.5" class="t"><tspan x="1085" >Marks as</tspan><tspan x="1085" dy="15">returned</tspan></text>
+<rect class="n" x="1025" y="182" width="120" height="56" rx="10"/><text x="1085" y="202.5" class="t"><tspan x="1085" >Reports a</tspan><tspan x="1085" dy="15">delay</tspan></text>
+<path class="n" d="M582 272H722L698 328H558Z"/><text x="640" y="292.5" class="t"><tspan x="640" >Answers the</tspan><tspan x="640" dy="15">question</tspan></text>
+<rect class="n n-start" x="745" y="352" width="130" height="56" rx="28"/><text x="810" y="380" class="t t-inv"><tspan x="810" >Needs a car</tspan></text>
+<rect class="n" x="565" y="442" width="150" height="56" rx="10"/><text x="640" y="462.5" class="t"><tspan x="640" >Reads the</tspan><tspan x="640" dy="15">rejection reason</tspan></text>
+<rect class="n" x="735" y="442" width="150" height="56" rx="10"/><text x="810" y="462.5" class="t"><tspan x="810" >Enters destination,</tspan><tspan x="810" dy="15">people, date, time</tspan></text>
+<rect class="n" x="905" y="442" width="120" height="56" rx="10"/><text x="965" y="462.5" class="t"><tspan x="965" >Sees the</tspan><tspan x="965" dy="15">expected result</tspan></text>
+<rect class="n" x="1045" y="442" width="100" height="56" rx="10"/><text x="1095" y="462.5" class="t"><tspan x="1095" >Sends the</tspan><tspan x="1095" dy="15">request</tspan></text>
+<rect class="n n-key" x="1210" y="72" width="140" height="56" rx="10"/><text x="1280" y="92.5" class="t"><tspan x="1280" >Car can be</tspan><tspan x="1280" dy="15">used again</tspan></text>
+<path class="n" d="M1395 77V123A65 9 0 0 0 1525 123V77"/><ellipse class="n" cx="1460" cy="77" rx="65" ry="9"/><text x="1460" y="100" class="t"><tspan x="1460" >Trip history</tspan></text>
+<path class="n n-dec" d="M1280 175L1340 235L1280 295L1220 235Z"/><text x="1280" y="220" class="t"><tspan x="1280" >Clashes with</tspan><tspan x="1280" dy="15">the next</tspan><tspan x="1280" dy="15">booking?</tspan></text>
+<path class="n n-dec" d="M1280 410L1340 470L1280 530L1220 470Z"/><text x="1280" y="462.5" class="t"><tspan x="1280" >A car that</tspan><tspan x="1280" dy="15">fits?</tspan></text>
+<rect class="n n-key" x="1400" y="352" width="140" height="56" rx="10"/><text x="1470" y="372.5" class="t"><tspan x="1470" >Confirmed</tspan><tspan x="1470" dy="15">automatically</tspan></text>
+<rect class="n" x="1400" y="517" width="140" height="56" rx="10"/><text x="1470" y="537.5" class="t"><tspan x="1470" >Joins the</tspan><tspan x="1470" dy="15">decision queue</tspan></text>
+</svg>
