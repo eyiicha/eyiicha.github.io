@@ -4,6 +4,147 @@ const CS_ASSET = 'assets/';
 
 const CASES = {
 
+  'teamu': {
+    short: 'Teamu', field: 'uiux', fieldName: 'UI/UX', label: 'Product design', cover: './assets/teamu/tm-thumb.webp',
+    title: 'One app to book a class, fill a padel game and meet the people you move with.',
+    intro: 'Teamu (team + temu, “to meet”) is a concept I designed end to end: a player app for wellness classes and open games, a host mode for the people who organise them, and a mobile app for the venues that run the studios and courts. I took it from a brief I set myself to a clickable prototype.',
+    link: { href: 'https://teamu-ericha.vercel.app/', label: 'View live prototype' },
+    meta: [['Company', 'Personal project · concept'], ['Role', 'Product Designer'], ['Platform', 'iOS app · player and venue'], ['Timeline', 'Oct 2026']],
+    blocks: [
+      /* ---------- understand ---------- */
+      { type: 'cards', label: 'Overview', title: 'One booking, three people with different jobs to do.', cols: 3,
+        body: 'In Jakarta, a pilates class is booked in one app, a padel court over WhatsApp, and the fourth player is found in a group chat. I started from the people on each side of that booking.',
+        items: [
+          { tag: 'Player', t: 'Wants to move, ideally with friends', d: 'Books a class or joins a game near them, without committing to one studio’s membership.' },
+          { tag: 'Host', t: 'Organises the game', d: 'Books the court, finds the players, collects everyone’s share and chases whoever drops out.' },
+          { tag: 'Venue partner', t: 'Runs the studio or courts', d: 'Loses money on empty off-peak slots and on last-minute cancellations nobody paid for.' },
+        ] },
+      { type: 'cards', label: 'Starting assumptions', title: 'Every side was coordinating by hand.', cols: 3, tone: 'soft',
+        body: 'I didn’t run formal research for this concept. I wrote down what I see in my own circle and in group chats, and treated each point as an assumption to test later.',
+        items: [
+          { tag: 'Player', t: 'Booking is scattered', list: ['Classes, courts and games live in different apps and chats', 'You only find out who’s going once you arrive', 'A membership ties you to one studio'] },
+          { tag: 'Host', t: 'The risk sits with one person', list: ['“Kurang 2 orang nih” every week', 'One person fronts the court and chases the rest for their share', 'A game that doesn’t fill gets cancelled in the chat at the last minute'] },
+          { tag: 'Venue', t: 'Empty slots and no-shows', list: ['Off-peak slots sit empty', 'No-shows when nobody paid upfront', 'Bookings and deposits handled one by one on WhatsApp'] },
+        ] },
+
+      /* ---------- define ---------- */
+      { type: 'text', label: 'Problem statement', title: 'Booking the space was never the hard part. Getting the right people into it was.',
+        body: ['Players can find a class, but not their people. Hosts can book a court, but not fill it. Venues can open a slot, but carry the risk when it stays empty.',
+          'So the product had to do two jobs at once: booking and paying, and the social layer around it, without becoming another group chat.'] },
+      { type: 'cards', label: 'How might we', title: 'Three questions that set the direction, in priority order.', cols: 3, numbered: true,
+        items: [
+          { t: 'How might we let people book any class or game in one flow, and pay only for what they book?', d: 'No credits, no memberships to compare. Studio packs stay, as a way to pay rather than a currency.' },
+          { t: 'How might we show who’s going before you book, without making it feel like a dating app?', d: 'People join a class because a friend goes. The social layer should come from moving together, not from browsing profiles.' },
+          { t: 'How might we fill a game without anyone fronting the money or getting stuck with an empty court?', d: 'Today the risk sits with the host. It should sit with the product, under rules everyone sees upfront.' },
+        ] },
+
+      /* ---------- ideate ---------- */
+      { type: 'cards', label: 'Exploring approaches', title: 'Three payment models, judged by who carries the risk.', cols: 3,
+        body: 'My first version used credits, like ClassPass. Holding it up against how people here actually pay (QRIS, e-wallets, per session) changed the direction.',
+        items: [
+          { tag: 'A · Rejected', t: 'Credits', d: 'Top up, then spend credits on classes. Familiar, but it hides the real price, needs a top-up before the first booking, and onboarding had to explain what a credit is.' },
+          { tag: 'B · Chosen', t: 'Pay per class, packs as a method', d: 'Every booking shows a price in rupiah, and you choose how to pay each time: GoPay, OVO, ShopeePay, QRIS, card or virtual account. A studio pack appears as one more option where it applies.', foot: 'Trade-off: heavy users lose the bulk discount of credits, so studios offer packs instead.' },
+          { tag: 'C · Rejected', t: 'Hybrid', d: 'Credits and direct payment side by side. It covers both habits, but doubles the rules, the copy and the edge cases, for a credit side most people would never use.' },
+        ] },
+      { type: 'cards', label: 'Open games', title: 'A spot is held, not charged, until the game fills.', cols: 3, tone: 'soft',
+        body: 'Courts are rented per slot, so a venue never loses money once someone pays the full price. The risk sits with the players, so I moved it into the product, with a deadline everyone can see.',
+        items: [
+          { tag: 'Join', t: 'Hold your spot', d: 'Each player pays their share when they join. It’s held, not charged, and the card shows “confirms by Fri 4:00 PM”.' },
+          { tag: 'Fills', t: 'Game confirmed', d: 'Once every spot is held, everyone is charged and the venue is paid in full.' },
+          { tag: 'Doesn’t fill', t: 'The host’s rule applies', d: 'Set when the game is made: ask the players first, play with whoever is in and split the court, or cancel for a full refund. A cancelled slot goes back to the venue 24 hours ahead to sell again.' },
+        ] },
+      { type: 'cards', label: 'Ideas I let go of', title: 'Features that looked right but solved the wrong problem.', cols: 3,
+        items: [
+          { t: 'A saved default payment method', d: 'It saves a tap, but people here pay differently at different places. Teamu asks every time, like any other checkout.' },
+          { t: 'Job titles on profiles', d: 'Showing work info would make Connect feel like networking, and make people pick who they play with. Connections come from playing together instead.' },
+          { t: 'A desktop dashboard for venues', d: 'Studio and court owners run things from their phone, between sessions. The partner app moved to mobile; heavy setup can live on the web later.' },
+        ] },
+
+      /* ---------- structure ---------- */
+      { type: 'flow', label: 'User flow', title: 'Booking a class, from browsing to the door.',
+        body: 'Booking follows the pattern people already know from other checkouts: review first, then pay. The payment method is picked on every booking, and QRIS and virtual account get their own step to finish the transfer.',
+        steps: ['Explore', 'Class detail', 'Review booking', 'Choose how to pay', 'Pay or scan QRIS', 'Booked', 'Check in'] },
+      { type: 'diagram', label: 'Open game flow', title: 'Who does what when a game fills, and when it doesn’t.',
+        body: ['I mapped open games across the three sides, the players, Teamu and the venue, because this is where money and risk change hands. A host creates a match and shares an invite link; Teamu holds the court until a deadline, and the venue sees the slot as pending, not lost.',
+          'At the deadline there is one decision. If the game is full, every hold is charged and the session is booked for the venue. If not, the rule the host picked upfront applies: ask the players first, play with fewer, with each player accepting a bigger share, or cancel, refund everyone and hand the slot back to the venue with a “Sell again” button.'],
+        src: './assets/teamu/opengame-flow.svg', alt: 'Teamu open game flow across the host and players, Teamu and the venue, from creating a match to the venue payout' },
+      { type: 'cards', label: 'Mapping the system', title: 'Two booking templates instead of one per sport.', cols: 2, tone: 'soft',
+        body: 'Instead of designing padel, yoga and mini soccer separately, I grouped sports by how they are booked. That kept the app to two flows, and the list of sports can grow without new screens.',
+        items: [
+          { tag: 'Classes', t: 'A spot in a session', list: ['Reformer and mat pilates, yoga, strength, padel clinics', 'A coach, a fixed time and limited spots', 'Pay per class or use a studio pack', 'Waitlist when it’s full'] },
+          { tag: 'Play', t: 'A share of a court', list: ['Padel and mini soccer (7 vs 7)', 'The court price split between players', 'Held until full, with a deadline', 'A host creates and manages the game'] },
+        ] },
+      { type: 'cards', label: 'Information architecture', title: 'Two roles in one app, the venue in another.', cols: 3,
+        items: [
+          { tag: 'Player', t: 'Four tabs', list: ['Home: next class, friends going, open games', 'Explore: classes by day and sport', 'Connect: buddies, Play and invites', 'Profile: bookings, packs and privacy'] },
+          { tag: 'Host', t: 'A mode, not an app', list: ['Any player can create a game', 'Manage game: who has held a spot, reminders, an invite link', 'Decides upfront what happens if it doesn’t fill'] },
+          { tag: 'Partner', t: 'Four tabs', list: ['Today: schedule per court, and alerts', 'Check-in: scan the booking QR', 'Slots: open rentals, games or classes', 'Payouts: what lands on Friday'] },
+        ] },
+
+      /* ---------- design ---------- */
+      { type: 'images', label: 'Onboarding', title: 'Four slides, one feature each.', cols: 4, phones: true, stack: true,
+        body: 'Early versions explained credits and generic benefits. The final onboarding shows the real product on each slide: classes from studios nearby, the price you pay, who is going, and an open game.',
+        items: [
+          { src: './assets/teamu/tm-onb-1-m.jpg', alt: 'Teamu onboarding, every class in one app', cap: 'Every class, one app' },
+          { src: './assets/teamu/tm-onb-2-m.jpg', alt: 'Teamu onboarding, pay per class', cap: 'Pay per class' },
+          { src: './assets/teamu/tm-onb-3-m.jpg', alt: 'Teamu onboarding, see who is going', cap: 'See who’s going' },
+          { src: './assets/teamu/tm-onb-4-m.jpg', alt: 'Teamu onboarding, find a workout buddy', cap: 'Find your buddy' },
+        ] },
+      { type: 'images', label: 'Home and Explore', title: 'What’s next for you, and who is going.', cols: 3, phones: true, stack: true,
+        body: 'Home leads with the next class and a check-in, then the friends who booked something this week. Explore lists classes by day with the price and spots left up front, so the decision is made before opening a class.',
+        items: [
+          { src: './assets/teamu/tm-home-m.jpg', alt: 'Teamu home with the next class and friends going', cap: 'Home', d: 'Next class, check-in, and the friends going.' },
+          { src: './assets/teamu/tm-explore-m.jpg', alt: 'Teamu explore list by day and sport', cap: 'Explore', d: 'Price and spots left on every card.' },
+          { src: './assets/teamu/tm-class-m.jpg', alt: 'Teamu class detail with who is going', cap: 'Class detail', d: 'Who’s going, the coach, and one booking button.' },
+        ] },
+      { type: 'images', label: 'Book → pay', title: 'Review first, then choose how to pay, every time.', cols: 4, phones: true, stack: true,
+        body: 'Nothing is pre-selected on the payment step, so the pay button stays disabled until a method is chosen. QRIS and virtual account open a step with the code or account number, an “I’ve paid” button, and a way to change method.',
+        items: [
+          { src: './assets/teamu/tm-review-m.jpg', alt: 'Teamu review booking step', cap: 'Review booking' },
+          { src: './assets/teamu/tm-pay-m.jpg', alt: 'Teamu payment method step', cap: 'Choose how to pay' },
+          { src: './assets/teamu/tm-qris-m.jpg', alt: 'Teamu QRIS payment code', cap: 'Scan QRIS' },
+          { src: './assets/teamu/tm-booked-m.jpg', alt: 'Teamu booking confirmation', cap: 'Booked' },
+        ] },
+      { type: 'images', label: 'Connect and Play', title: 'Find your people, then a game.', cols: 3, phones: true, stack: true,
+        body: 'Buddies are suggested from classes in common, level and area, and you connect by waving after a class you both took. Play lists open padel matches and 7 vs 7 mini soccer, showing who has already joined each one.',
+        items: [
+          { src: './assets/teamu/tm-buddies-m.jpg', alt: 'Teamu Connect buddies tab', cap: 'Buddies' },
+          { src: './assets/teamu/tm-play-m.jpg', alt: 'Teamu Play tab with open padel matches', cap: 'Padel' },
+          { src: './assets/teamu/tm-soccer-m.jpg', alt: 'Teamu Play tab with mini soccer teams', cap: 'Mini soccer' },
+        ] },
+      { type: 'images', label: 'Hosting a game', title: 'Everything a host used to do in the group chat.', cols: 3, phones: true, stack: true,
+        body: 'Creating a game takes a court, a day, a time and a level. Manage game shows who has held a spot and who hasn’t, sends reminders, shares an invite link, and sets in advance what happens if it doesn’t fill.',
+        items: [
+          { src: './assets/teamu/tm-create-m.jpg', alt: 'Teamu create a padel match sheet', cap: 'Create a match' },
+          { src: './assets/teamu/tm-hold-m.jpg', alt: 'Teamu hold your spot payment', cap: 'Hold your spot' },
+          { src: './assets/teamu/tm-manage-m.jpg', alt: 'Teamu manage game for hosts', cap: 'Manage game' },
+        ] },
+      { type: 'images', label: 'Partner app', title: 'A venue’s day, on the phone it’s already run from.', cols: 4, phones: true, stack: true,
+        body: 'Today lists every session per court, with the games that may not fill flagged at the top. Released slots come back with a “Sell again” button, check-in is a QR scan, and new slots are opened from a form that estimates what they’ll earn.',
+        items: [
+          { src: './assets/teamu/p-today-m.jpg', alt: 'Teamu partner app today schedule', cap: 'Today' },
+          { src: './assets/teamu/p-released-m.jpg', alt: 'Teamu partner app released slot detail', cap: 'Released slot' },
+          { src: './assets/teamu/p-checkin-m.jpg', alt: 'Teamu partner app QR check-in', cap: 'Check-in' },
+          { src: './assets/teamu/p-slots-m.jpg', alt: 'Teamu partner app new slot form', cap: 'Slots' },
+        ] },
+      { type: 'cards', label: 'Edge cases', title: 'Designing for the days that don’t go to plan.', cols: 4, tone: 'soft',
+        body: 'Games get cancelled, people pay late and venues get stuck with empty slots. My rule: no case ends with “sort it out in the chat”.',
+        items: [
+          { t: 'A game doesn’t fill', d: 'The host’s rule applies: ask the players, play with fewer at a bigger share, or refund everyone. Nobody is charged by surprise.' },
+          { t: 'An invite is accepted', d: 'Accepting goes straight to payment. The spot only counts once it’s held.' },
+          { t: 'Paying by QRIS or VA', d: 'A step with the code or account number, “I’ve paid” to confirm, and “Change method” if it doesn’t go through.' },
+          { t: 'A class is full', d: 'Join the waitlist, and you’re only charged if a spot opens.' },
+          { t: 'You cancel', d: 'Free up to 4 hours before. The money goes back to the method you used, or the class back to your pack.' },
+          { t: 'A host cancels', d: 'Everyone who held a spot is refunded at once, with an undo for mistakes.' },
+          { t: 'A slot is released', d: 'The venue sees it on Today and can sell it again with one tap, at a lower price.' },
+          { t: 'Onboarding is skipped', d: 'Setup still asks for sport, level, time and area, so Home is never empty.' },
+        ] },
+      { type: 'quote', quote: 'The interesting design work wasn’t the booking screen. It was deciding who carries the risk when plans fall apart.',
+        body: ['This is a concept, so the next step is evidence: testing hold-until-full with a few padel groups, and the partner app with two venues, before adding more sports.',
+          'If I kept going, I’d add proper team-vs-team sparring for mini soccer, and track two numbers: how many games fill before their deadline, and how many released slots venues manage to sell again.'] },
+    ],
+  },
+
   'videfly': {
     short: 'Videfly', field: 'uiux', fieldName: 'UI/UX', label: 'Product design', cover: 'cs-vp-cover.jpg',
     title: 'Designing an AI-powered content platform across creation, production, and optimization.',

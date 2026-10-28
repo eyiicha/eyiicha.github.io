@@ -12,6 +12,9 @@ const fields = [
 ];
 
 const projects = [
+  { field: 'uiux', title: 'Teamu', org: 'Personal project · concept', year: '2026', img: './assets/teamu/tm-thumb.webp',
+    desc: 'A wellness and sports app where people book classes, fill open games and meet the people they move with, plus a mobile app for the venues.',
+    tags: ['Mobile app', 'Live prototype'], href: 'https://teamu-ericha.vercel.app/', case: 'teamu' },
   { field: 'uiux', title: 'GoFleet', org: 'Paragon · technical challenge', year: '2026', img: './assets/thumbs/gofleet.jpg',
     desc: 'An internal vehicle booking product where employees state what they need, clear-cut requests are confirmed instantly and the coordinator only decides the contested ones.',
     tags: ['Web app', 'Live prototype'], href: 'https://gofleet-ericha.vercel.app/?lang=en', case: 'gofleet' },

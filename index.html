@@ -228,6 +228,8 @@
     box.innerHTML = fields.map((f, fi) => {
       const list = projects.filter(p => p.field === f.id);
       const papers = list.slice(0, 3);
+      // the middle paper sits in front, so the newest case takes that slot
+      if (papers.length > 1) [papers[0], papers[1]] = [papers[1], papers[0]];
       const inside = papers.length
         ? papers.map(p => `<span class="folder__paper"><img src="${imgSrc(p.img)}" alt="" loading="lazy"></span>`).join('')
         : '<span class="folder__empty">coming soon</span>';

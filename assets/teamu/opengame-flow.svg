@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 630" role="img" aria-labelledby="og-title">
+<title id="og-title">Teamu open game flow: from a host creating a match to the venue's payout, across players, Teamu and the venue</title>
+<defs><marker id="og-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#8f8486"/></marker></defs>
+<style>
+  .a{fill:#faf7f7;stroke:#ebe5e5;stroke-width:1.2}
+  .a-label{fill:#66020b}
+  .a-text{font:700 12px 'Plus Jakarta Sans',sans-serif;letter-spacing:.12em;fill:#fff;text-transform:uppercase}
+  .n{fill:#fff;stroke:#cdc3c4;stroke-width:1.3}
+  .n-dec{fill:#fff;stroke:#66020b;stroke-width:1.4;stroke-dasharray:5 4}
+  .n-key{fill:#fbeef0;stroke:#66020b;stroke-width:1.3}
+  .n-stop{fill:#0d0b0c;stroke:#0d0b0c}
+  .t{font:600 12.5px 'Plus Jakarta Sans',sans-serif;fill:#0d0b0c;text-anchor:middle;dominant-baseline:middle}
+  .t-inv{fill:#fff}
+  .e{fill:none;stroke:#8f8486;stroke-width:1.4;stroke-linejoin:round}
+  .e-dash{stroke-dasharray:6 5}
+  .el{font:700 11px 'Plus Jakarta Sans',sans-serif;fill:#66020b}
+</style>
+
+<!-- lanes -->
+<rect class="a" x="20" y="70" width="1560" height="130" rx="18"/>
+<rect class="a-label" x="36" y="57" width="160" height="26" rx="13"/><text class="a-text" x="49" y="74">Host + players</text>
+<rect class="a" x="20" y="232" width="1560" height="208" rx="18"/>
+<rect class="a-label" x="36" y="219" width="80" height="26" rx="13"/><text class="a-text" x="49" y="236">Teamu</text>
+<rect class="a" x="20" y="472" width="1560" height="133" rx="18"/>
+<rect class="a-label" x="36" y="459" width="80" height="26" rx="13"/><text class="a-text" x="49" y="476">Venue</text>
+
+<!-- edges -->
+<path class="e" d="M225 135L295 135" marker-end="url(#og-arrow)"/><text class="el" x="260" y="125" text-anchor="middle">Invite link</text>
+<path class="e" d="M140 157L140 278" marker-end="url(#og-arrow)"/>
+<path class="e" d="M140 322L140 518" marker-end="url(#og-arrow)"/>
+<path class="e" d="M485 135L620 135L620 278" marker-end="url(#og-arrow)"/>
+<path class="e e-dash" d="M240 300L535 300" marker-end="url(#og-arrow)"/><text class="el" x="388" y="290" text-anchor="middle">Deadline reached</text>
+<path class="e" d="M705 300L775 300" marker-end="url(#og-arrow)"/><text class="el" x="740" y="290" text-anchor="middle">Yes</text>
+<path class="e" d="M620 322L620 378" marker-end="url(#og-arrow)"/><text class="el" x="630" y="354">No</text>
+<path class="e" d="M710 400L750 400L750 135L765 135" marker-end="url(#og-arrow)"/><text class="el" x="742" y="215" text-anchor="end">Play with fewer</text>
+<path class="e" d="M620 422L620 518" marker-end="url(#og-arrow)"/><text class="el" x="630" y="462">Cancel, refunds sent</text>
+<text class="el" x="520" y="404" text-anchor="end">“Ask me first”: players pick one</text>
+<path class="e" d="M880 157L880 278" marker-end="url(#og-arrow)"/>
+<path class="e" d="M880 322L880 518" marker-end="url(#og-arrow)"/>
+<path class="e" d="M985 300L1020 300L1020 135L1055 135" marker-end="url(#og-arrow)"/><text class="el" x="1028" y="215">Booked</text>
+<path class="e" d="M965 540L1055 540" marker-end="url(#og-arrow)"/>
+<path class="e" d="M1150 157L1150 518" marker-end="url(#og-arrow)"/>
+<path class="e" d="M1245 540L1330 540" marker-end="url(#og-arrow)"/>
+
+<!-- host + players -->
+<rect class="n-stop" x="55" y="113" width="170" height="44" rx="22"/><text class="t t-inv" x="140" y="135">Host creates a match</text>
+<rect class="n" x="295" y="113" width="190" height="44" rx="12"/><text class="t" x="390" y="135">Players hold a spot</text>
+<rect class="n" x="765" y="113" width="230" height="44" rx="12"/><text class="t" x="880" y="135">Players accept a bigger share</text>
+<rect class="n" x="1055" y="113" width="190" height="44" rx="12"/><text class="t" x="1150" y="135">Show QR at the venue</text>
+
+<!-- teamu -->
+<rect class="n" x="40" y="278" width="200" height="44" rx="12"/><text class="t" x="140" y="300">Court held until deadline</text>
+<rect class="n-dec" x="535" y="278" width="170" height="44" rx="22"/><text class="t" x="620" y="300">Full by deadline?</text>
+<rect class="n-key" x="775" y="278" width="210" height="44" rx="12"/><text class="t" x="880" y="300">Charge holds, confirm game</text>
+<rect class="n" x="530" y="378" width="180" height="44" rx="12"/><text class="t" x="620" y="400">Host’s fallback rule</text>
+
+<!-- venue -->
+<rect class="n" x="50" y="518" width="180" height="44" rx="12"/><text class="t" x="140" y="540">Slot shown as pending</text>
+<rect class="n-stop" x="515" y="518" width="210" height="44" rx="22"/><text class="t t-inv" x="620" y="540">Slot released · Sell again</text>
+<rect class="n" x="795" y="518" width="170" height="44" rx="12"/><text class="t" x="880" y="540">Session booked</text>
+<rect class="n" x="1055" y="518" width="190" height="44" rx="12"/><text class="t" x="1150" y="540">Scan QR to check in</text>
+<rect class="n-stop" x="1330" y="518" width="180" height="44" rx="22"/><text class="t t-inv" x="1420" y="540">Payout on Friday</text>
+</svg>

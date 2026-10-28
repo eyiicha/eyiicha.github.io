@@ -212,3 +212,19 @@
 /* drawn diagrams (user flows): full width, scroll sideways on small screens instead of shrinking the text */
 .cs-diagram{overflow-x:auto;border:1px solid var(--line);border-radius:22px;background:#fff;padding:18px;-webkit-overflow-scrolling:touch}
 .cs-diagram svg{display:block;width:100%;min-width:1100px;height:auto}
+
+/* Teamu phone mockups sit on a soft blue card, at Fexplore's upright ratio */
+#case.cs-teamu img.is-tall{object-fit:cover;object-position:center;padding:0}
+#case.cs-teamu .cs-imgs.is-phones img{aspect-ratio:576/1024;object-fit:cover;object-position:center;padding:0}
+.cs-teamu .cs-imgs.is-phones.cols-3{grid-template-columns:repeat(3,minmax(0,340px));justify-content:center}
+.cs-teamu .cs-imgs.is-phones.cols-4{grid-template-columns:repeat(4,minmax(0,300px));justify-content:center}
+@media (max-width:900px){ .cs-teamu .cs-imgs.is-phones.cols-3,.cs-teamu .cs-imgs.is-phones.cols-4{grid-template-columns:repeat(2,1fr)} }
+
+/* Teamu's user flow reads as one row under its heading, using the full width */
+#case.cs-teamu .is-split.t-flow .wrap{grid-template-columns:1fr;gap:0}
+#case.cs-teamu .is-split.t-flow .cs-head{margin-bottom:28px}
+#case.cs-teamu .is-split .cs-flow{flex-direction:row;flex-wrap:nowrap;justify-self:stretch;gap:10px}
+#case.cs-teamu .is-split .cs-flow span{flex:1 1 auto;min-width:0;justify-content:center;white-space:nowrap}
+#case.cs-teamu .is-split .cs-flow i{rotate:0deg}
+@media (max-width:900px){ #case.cs-teamu .is-split .cs-flow{flex-wrap:wrap} #case.cs-teamu .is-split .cs-flow span{flex:0 0 auto} }
+
