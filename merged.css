@@ -87,7 +87,7 @@
 .portrait figcaption b{font-weight:600}
 .portrait figcaption span{color:var(--ink-3)}
 /* the name sits on the photo as a light multiplayer cursor */
-.portrait figcaption.is-cursor{left:10%;right:auto;bottom:13%;padding:0;background:none;border-radius:0}
+.portrait figcaption.is-cursor{left:auto;right:6%;bottom:11%;padding:0;background:none;border-radius:0}
 .is-cursor .cursor{position:relative;right:auto;bottom:auto}
 .cursor.is-light svg{fill:#fff;stroke:var(--accent)}
 .cursor.is-light svg{width:34px;height:40px}
