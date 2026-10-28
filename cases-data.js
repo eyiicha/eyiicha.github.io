@@ -346,14 +346,6 @@ const CASES = {
         ] },
       { type: 'quote', quote: 'Moving a form from email into an app only moves the queue. It doesn’t remove it.',
         body: 'GoFleet was less about screens than about deciding who should decide. Letting the system confirm the clear-cut requests and handing the contested ones to a person, with one clear suggestion and the reasons kept, makes the product faster without taking judgment away from the people who carry it.' },
-      { type: 'try', label: 'Try it yourself', title: 'Two minutes in the live prototype.',
-        body: 'It runs in the browser on the brief’s own data, frozen at Monday 09.30. The EN/ID switch in the top bar changes the language.',
-        steps: [
-          'As the Coordinator, click “Start with R109” on the Overview. Only the Hiace fits eight people, and it is booked from 13.30.',
-          'Read the one suggestion, then confirm it or pick another option. Each option shows who carries the cost.',
-          'Switch to Requester in the sidebar and request a car for tomorrow. The summary shows the outcome before you send.',
-          'Back as Coordinator, use the prototype controls in the sidebar to make a trip run late, and watch the schedule react.'],
-        link: { href: 'https://gofleet-ericha.vercel.app/?lang=en', label: 'Open the prototype' } },
     ],
   },
 
