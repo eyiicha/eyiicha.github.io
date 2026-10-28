@@ -809,7 +809,7 @@
 .receipt__list{padding:6px 0}
 .line{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 0;border-bottom:1px dotted #d8d2d1}
 .line img{width:30px;height:30px;border-radius:50%;object-fit:contain;border:1px solid var(--line);padding:3px;background:#fff;filter:grayscale(1);opacity:.75;transition:filter .3s, opacity .3s, transform .3s}
-.line img[src*="videfly"]{padding:0;object-fit:cover;object-position:12% 50%}
+.line img[src*="videfly"]{padding:2px}
 .line:hover img{filter:none;opacity:1;transform:scale(1.12)}
 .line h3{font-size:14px;font-weight:600;line-height:1.3}
 .line span{font-size:12.5px;color:var(--ink-3)}
