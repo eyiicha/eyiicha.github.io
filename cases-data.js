@@ -128,7 +128,7 @@ const CASES = {
       { type: 'cards', label: 'Testing the idea', title: 'I ran the three requests stuck at 09.30 through each approach.', cols: 3, tone: 'soft',
         body: 'Approach B sorted them the way a good coordinator would: one already had a car and should never have waited, the other two genuinely needed judgment. Self-service would have handed the Hiace to R110 simply because it booked two days earlier, even though R109 was a client visit.',
         items: [
-          { tag: 'Auto-confirmed', t: 'R103 · client visit, 6 people', d: '10.00–13.00. Avanza GF-002 was free and fits the group.' },
+          { tag: 'Auto-confirmed', t: 'R103 · client visit, 6 people', d: '10.00–13.00. Avanza B 1834 KJT was free and fits the group.' },
           { tag: 'Needs coordinator', t: 'R109 · client visit, 8 people', d: 'The only Hiace is booked for an internal training from 13.30.' },
           { tag: 'Needs coordinator', t: 'R112 · management meeting', d: 'The requester added a note: “director level”.' },
         ] },
