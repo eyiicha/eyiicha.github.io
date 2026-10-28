@@ -87,10 +87,11 @@
 .portrait figcaption b{font-weight:600}
 .portrait figcaption span{color:var(--ink-3)}
 /* the name sits on the photo as a light multiplayer cursor */
-.portrait figcaption.is-cursor{left:14%;right:auto;bottom:14%;padding:0;background:none;border-radius:0}
+.portrait figcaption.is-cursor{left:10%;right:auto;bottom:13%;padding:0;background:none;border-radius:0}
 .is-cursor .cursor{position:relative;right:auto;bottom:auto}
 .cursor.is-light svg{fill:#fff;stroke:var(--accent)}
-.cursor.is-light b{background:#fff;color:var(--accent);font-size:13.5px;box-shadow:0 8px 18px rgba(0,0,0,.28)}
+.cursor.is-light svg{width:34px;height:40px}
+.cursor.is-light b{margin-top:30px;padding:7px 16px;background:#fff;color:var(--accent);font-size:16px;white-space:nowrap;box-shadow:0 10px 22px rgba(0,0,0,.3)}
 
 /* dark experience */
 .dark{background:#0f0c0d;color:#fff;position:relative;isolation:isolate;padding:110px 0;margin-top:110px}
