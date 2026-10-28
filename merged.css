@@ -86,6 +86,11 @@
 .portrait figcaption{position:absolute;left:14px;right:14px;bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:#fff;font-size:13.5px}
 .portrait figcaption b{font-weight:600}
 .portrait figcaption span{color:var(--ink-3)}
+/* the name sits on the photo as a light multiplayer cursor */
+.portrait figcaption.is-cursor{left:14%;right:auto;bottom:14%;padding:0;background:none;border-radius:0}
+.is-cursor .cursor{position:relative;right:auto;bottom:auto}
+.cursor.is-light svg{fill:#fff;stroke:var(--accent)}
+.cursor.is-light b{background:#fff;color:var(--accent);font-size:13.5px;box-shadow:0 8px 18px rgba(0,0,0,.28)}
 
 /* dark experience */
 .dark{background:#0f0c0d;color:#fff;position:relative;isolation:isolate;padding:110px 0;margin-top:110px}
