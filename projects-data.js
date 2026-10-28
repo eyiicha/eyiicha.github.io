@@ -14,7 +14,7 @@ const fields = [
 const projects = [
   { field: 'uiux', title: 'GoFleet', org: 'Paragon · technical challenge', year: '2026', img: './assets/thumbs/gofleet.jpg',
     desc: 'An internal vehicle booking product where employees state what they need, clear-cut requests are confirmed instantly and the coordinator only decides the contested ones.',
-    tags: ['Web app', 'Live prototype'], href: 'https://gofleet-ericha.vercel.app/', case: 'gofleet' },
+    tags: ['Web app', 'Live prototype'], href: 'https://gofleet-ericha.vercel.app/?lang=en', case: 'gofleet' },
   { field: 'uiux', title: 'Videfly', org: 'Videfly', year: '2024 – 2026', status: 'Shipped', img: './assets/thumbs/videfly.jpg',
     desc: 'Five core product experiences and every landing page for an AI platform that creates, produces and optimises marketing videos.',
     tags: ['Product design', 'Landing pages'], href: 'work/videfly-product-design.html', case: 'videfly' },

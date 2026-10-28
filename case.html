@@ -105,6 +105,9 @@
         </article>`).join('')}</div>`,
       // a drawn diagram (an SVG file), inlined after render so it picks up the page fonts
       diagram: b => `<div class="cs-diagram rv" data-svg="${b.src}" role="img" aria-label="${esc(b.alt || '')}"></div>`,
+      // a closing invitation into a live prototype: a short path to follow, then the link
+      try: b => `<div class="cs-try rv"><ol>${b.steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol>
+        <a class="btn btn-dark cs-live" href="${b.link.href}" target="_blank" rel="noopener">${esc(b.link.label)} <span aria-hidden="true">↗</span></a></div>`,
       quote: b => `<div class="cs-quote rv"><span class="label">Reflection</span><blockquote>${esc(b.quote)}</blockquote>${[].concat(b.body).map(p => `<p>${esc(p)}</p>`).join('')}</div>`,
     };
 
