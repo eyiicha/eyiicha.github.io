@@ -5,7 +5,7 @@ const CS_ASSET = 'assets/';
 const CASES = {
 
   'teamu': {
-    short: 'Teamu', field: 'uiux', fieldName: 'UI/UX', label: 'Product design', cover: './assets/teamu/tm-thumb.webp',
+    short: 'Teamu', field: 'uiux', fieldName: 'UI/UX', label: 'Product design', cover: './assets/teamu/tm-thumb.webp', heroVideo: 'ohTpJZMb7zA',
     title: 'One app to book a class, fill a padel game and meet the people you move with.',
     intro: 'Teamu (team + temu, “to meet”) is a concept I designed end to end: a player app for wellness classes and open games, a host mode for the people who organise them, and a mobile app for the venues that run the studios and courts. I took it from a brief I set myself to a clickable prototype.',
     link: { href: 'https://teamu-ericha.vercel.app/', label: 'View live prototype' },

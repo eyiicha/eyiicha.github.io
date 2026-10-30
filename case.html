@@ -122,7 +122,10 @@
           ${c.link ? `<a class="btn btn-dark cs-live" href="${c.link.href}" target="_blank" rel="noopener">${esc(c.link.label)} <span aria-hidden="true">↗</span></a>` : ""}
           <dl class="cs-meta">${c.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
         </div>
-        <div class="wrap"><figure class="cs-cover">${img(c.cover, c.short + ' cover')}</figure></div>
+        <div class="wrap">${c.heroVideo
+          // a case can open with its film instead of the cover still; the cover stays the card thumbnail
+          ? `<figure class="cs-cover cs-cover--video"><iframe src="https://www.youtube-nocookie.com/embed/${c.heroVideo}?rel=0&modestbranding=1&playsinline=1" title="${esc(c.short)} video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></figure>`
+          : `<figure class="cs-cover">${img(c.cover, c.short + ' cover')}</figure>`}</div>
       </section>
       ${c.blocks.map(b => {
         // a lone image, one or two phone screens, or a flow sit beside their copy instead of under it,
