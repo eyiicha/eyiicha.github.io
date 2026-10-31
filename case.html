@@ -45,7 +45,7 @@
           <a href="https://www.linkedin.com/in/erichaameilia/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.1c0-1.22-.02-2.78-1.7-2.78-1.7 0-1.96 1.33-1.96 2.7V21h-4z"/></svg>Ericha Ameilia</a>
         </nav>
       </div>
-      <div class="fcard__bottom"><span>© 2026 Ericha Ameilia Putri</span><span>Signmeilia design co. · Indonesia</span></div>
+      <div class="fcard__bottom"><span>© 2026 Ericha Ameilia Putri</span><span>Signmeilia · Indonesia</span></div>
     </div>
   </div>
 </footer>
@@ -73,6 +73,8 @@
         ${[].concat(b.body || []).map(p => `<p>${esc(p)}</p>`).join('')}
       </div>` : '';
 
+    // a measured outcome, linking to where it can be checked
+    const result = r => `<a class="cs-result" href="${r.href}" target="_blank" rel="noopener"><b>${esc(r.value)}</b><span>${esc(r.label)} <span aria-hidden="true">↗</span></span></a>`;
     const blocks = {
       text: b => '',
       cards: b => `<div class="cs-cards cols-${b.cols || 3}" data-stagger>${b.items.map((it, i) => `
@@ -100,10 +102,12 @@
             <span class="label">${esc(w.brand)}</span>
             <h3>${esc(w.title)}</h3>
             ${[].concat(w.body).map(p => `<p>${esc(p)}</p>`).join('')}
+            ${w.result ? result(w.result) : ''}
             <div class="cs-chips"><b>My contribution</b>${w.did.map(d => `<span class="chip">${esc(d)}</span>`).join('')}</div>
           </div>
-        </article>`).join('')}</div>`,
-      // a drawn diagram (an SVG file), inlined after render so it picks up the page fonts
+          ${w.gallery ? `<div class="cs-gallery"><b>${esc(w.gallery.label)}</b><div class="cs-gallery__grid">${w.gallery.items.map(src => `
+            <a href="${src}" target="_blank" rel="noopener">${img(src, w.brand)}</a>`).join('')}</div></div>` : ''}
+        </article>`).join('')}</div>`,      // a drawn diagram (an SVG file), inlined after render so it picks up the page fonts
       diagram: b => `<div class="cs-diagram rv" data-svg="${b.src}" role="img" aria-label="${esc(b.alt || '')}"></div>`,
       quote: b => `<div class="cs-quote rv"><span class="label">Reflection</span><blockquote>${esc(b.quote)}</blockquote>${[].concat(b.body).map(p => `<p>${esc(p)}</p>`).join('')}</div>`,
     };
@@ -119,6 +123,7 @@
           <span class="mix-tag">${esc(c.label)}</span>
           <h1 class="cs-title">${esc(c.title)}</h1>
           <p class="cs-intro">${esc(c.intro)}</p>
+          ${c.result ? result(c.result) : ''}
           ${c.link ? `<a class="btn btn-dark cs-live" href="${c.link.href}" target="_blank" rel="noopener">${esc(c.link.label)} <span aria-hidden="true">↗</span></a>` : ""}
           <dl class="cs-meta">${c.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
         </div>
