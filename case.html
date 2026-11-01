@@ -123,7 +123,6 @@
           <span class="mix-tag">${esc(c.label)}</span>
           <h1 class="cs-title">${esc(c.title)}</h1>
           <p class="cs-intro">${esc(c.intro)}</p>
-          ${c.result ? result(c.result) : ''}
           ${c.link ? `<a class="btn btn-dark cs-live" href="${c.link.href}" target="_blank" rel="noopener">${esc(c.link.label)} <span aria-hidden="true">↗</span></a>` : ""}
           <dl class="cs-meta">${c.meta.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
         </div>

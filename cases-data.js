@@ -555,7 +555,6 @@ const CASES = {
     title: 'Turning brand briefs into AI-powered commercial content.',
     intro: 'Selected commercial and social-first video work created for multiple brands during my time at Videfly, from creative direction and storyboarding to AI production, editing, compositing, and final delivery.',
     meta: [['Company', 'Videfly'], ['Role', 'Senior Creative Designer'], ['Industry', 'AI Creative & Video'], ['Timeline', 'Apr – Sep 2026']],
-    result: { value: '476.3K', label: 'views on Rumah Kebaya’s TikTok, from an AI video I created', href: 'https://www.tiktok.com/@rumahkebaya20/video/7632225500152286472' },
     blocks: [
       { type: 'cards', label: 'My scope', title: 'From creative brief to final delivery.', cols: 4, numbered: true,
         body: 'Working in an agency-style creative environment meant moving between different brands, industries, visual languages, and production requirements. My role was to translate those needs into content that still felt intentional, brand-aligned, and ready to publish.',
