@@ -6,9 +6,9 @@ const imgSrc = img => img.startsWith('./') ? img : ASSET + img;
 
 const fields = [
   { id: 'uiux', name: 'UI/UX', blurb: 'Apps, platforms and landing pages.' },
-  { id: 'social', name: 'Social Media Design', blurb: 'Feed systems people stop scrolling for.' },
-  { id: 'brand', name: 'Brand Design', blurb: 'Identities and brand content.' },
+  { id: 'social', name: 'Graphic Design', blurb: 'Social feeds and brand visuals people stop scrolling for.' },
   { id: 'video', name: 'Video Editing', blurb: 'AI commercials and short-form cuts.' },
+  { id: 'brand', name: 'Campaign Strategy', blurb: 'Campaigns that start from a human insight.' },
 ];
 
 const projects = [
@@ -32,7 +32,10 @@ const projects = [
     tags: ['Instagram', 'Content system'], href: 'work/feedup.html', case: 'feedup' },
   { field: 'social', title: 'NextStep', org: 'Career platform concept', year: '', img: './assets/thumbs/nextstep.jpg',
     desc: 'A cohesive social system for a career development platform: educational posts, campaign visuals and storytelling.',
-    tags: ['Content system', 'Campaign'], href: 'work/nextstep.html', case: 'nextstep' },
+    tags: ['Content system', 'Campaign visuals'], href: 'work/nextstep.html', case: 'nextstep' },
+  { field: 'brand', title: 'MOO-RE · Jam Lahap', org: 'Strategic planning test · speculative', year: '2026', img: './assets/thumbs/moore-cover.jpg',
+    desc: 'A 10-month campaign with no TV that turns a kids’ milk bought “only when needed” into a daily 4 PM ritual, run on WhatsApp and spread mom to mom.',
+    tags: ['Campaign strategy', 'Insight', 'Comms plan'], href: 'case.html?id=moore', case: 'moore' },
   { field: 'video', title: 'Videfly AI Creative', org: 'Videfly', year: '2026', img: './assets/thumbs/videfly-ai.jpg',
     desc: 'AI-powered commercials for perfume, resort, cat food and fashion brands, from storyboard and generation to the final edit.',
     tags: ['AI video', 'Short form', 'Editing'], href: 'work/videfly-ai-creative.html', case: 'videfly-ai' },

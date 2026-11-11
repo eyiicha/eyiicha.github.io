@@ -484,7 +484,7 @@ const CASES = {
   },
 
   'feedup': {
-    short: 'Feed Up', field: 'social', fieldName: 'Social Media Design', label: 'Social media design', cover: 'cs-fu-cover.jpg',
+    short: 'Feed Up', field: 'social', fieldName: 'Graphic Design', label: 'Social media design', cover: 'cs-fu-cover.jpg',
     title: 'Turning feedback into a visual story people want to engage with.',
     intro: "Feed Up is a feedback platform that helps individuals and teams collect feedback, understand what matters, and turn it into meaningful action. As a freelance social media designer, I developed a visual direction that makes the product's value feel simple, relatable, and visually memorable across social content.",
     meta: [['Company', 'Feed Up'], ['Role', 'Social Media Designer'], ['Scope', 'SaaS'], ['Timeline', 'Sep – Oct 2025']],
@@ -518,7 +518,7 @@ const CASES = {
   },
 
   'nextstep': {
-    short: 'NextStep', field: 'social', fieldName: 'Social Media Design', label: 'Social media design', cover: 'cs-ns-cover.jpg',
+    short: 'NextStep', field: 'social', fieldName: 'Graphic Design', label: 'Social media design', cover: 'cs-ns-cover.jpg',
     title: 'Building a career brand that makes progress feel possible.',
     intro: 'NextStep is a self-initiated concept project for a fictional career development platform. I created the brand\'s social media direction to explore how career advice, educational content, and campaign messaging could live within one recognizable, human-centered visual system, not just a collection of isolated posts.',
     meta: [['Company', 'NextStep (concept)'], ['Role', 'Social Media Designer'], ['Industry', 'Career Development'], ['Timeline', 'Aug 2026']],
@@ -588,6 +588,83 @@ const CASES = {
         steps: ['Understand', 'Shape the story', 'Generate', 'Refine', 'Deliver'] },
       { type: 'quote', quote: 'AI can generate the frame. Creative direction makes it belong to the brand.',
         body: 'The most important decisions often happened between generations: what to keep, what to regenerate, how to maintain consistency, and how to turn individual outputs into one cohesive piece of content.' },
+    ],
+  },
+  'moore': {
+    short: 'MOO-RE · Jam Lahap', field: 'brand', fieldName: 'Campaign Strategy', label: 'Campaign strategy', cover: './assets/moore/cover-hero.jpg', heroCover: false,
+    title: 'Turning a kids’ milk bought “only when needed” into a daily 4 PM habit.',
+    intro: 'MOO-RE is a children’s powdered milk made with temulawak (Javanese turmeric) and seven vitamins and minerals, sold mostly in minimarkets and supermarkets. Its market share had dropped for two years while the milk category kept growing. In a strategic planning test, I was asked for a 10-month campaign that grows awareness, how often families drink it, and word-of-mouth, on IDR 800 million and with no TV advertising. MOO-RE is a test brand, so the campaign and every visual here are mockups.',
+    meta: [['Brief', 'Strategic planning test'], ['Role', 'Strategic Planner'], ['Category', 'Kids’ milk · FMCG'], ['Timeline', 'Nov 2026']],
+    blocks: [
+      /* ---------- understand ---------- */
+      { type: 'cards', label: 'The challenge', title: 'A category that was growing, a brand that wasn’t.', cols: 3, numbered: true,
+        body: 'MOO-RE sat between two bigger players. The large growing-up milk brands own the everyday glass of milk and outspend everyone on media. For children who won’t eat, mothers already buy temulawak syrups. Fighting either on price or reach would use up the budget in weeks.',
+        items: [
+          { t: 'The category wasn’t the problem', d: 'People were buying more milk than ever. They just weren’t buying MOO-RE.' },
+          { t: 'It was bought only when needed', d: 'Mothers who already used it saw it as an extra, mostly for days their child refused to eat.' },
+          { t: 'IDR 800 million, no TV', d: 'Every rupiah had to build a habit and get people talking, not just buy reach.' },
+        ] },
+      { type: 'cards', label: 'Consumer insight', title: 'When a child won’t eat, the plate isn’t the hardest part. The comments are.', cols: 3, tone: 'soft',
+        body: 'Picky eating, which Indonesian parents call GTM (gerakan tutup mulut, “the closed-mouth move”), is common: around 1 in 3 preschoolers in one Jakarta study. Yet mothers tend to carry it alone, and remarks like “why is your child so thin?” sting more than the food left on the plate. So MOO-RE’s job wasn’t to promise a child who eats. It was to stand beside the mother.',
+        items: [
+          { tag: 'Consumer', t: 'Support, not judgment', d: 'What mothers need most is to feel they’re not failing. This was my working hypothesis, planned for validation with interviews in month one.' },
+          { tag: 'Data', t: 'It’s normal, not rare', d: 'Around 1 in 3 preschool children have feeding difficulties, so many mothers share the same worry.' },
+          { tag: 'Brand', t: 'Trust already exists', d: 'Current users reach for MOO-RE on difficult days because of the temulawak. That trust is where the campaign starts.' },
+        ] },
+      /* ---------- strategy ---------- */
+      { type: 'cards', label: 'Positioning', title: 'One more glass, not a different glass.', cols: 3,
+        body: 'Asking families to swap their main milk would mean fighting the biggest brands head-on. Instead, MOO-RE sits next to it, the way conditioner sits next to shampoo. Growth comes from people who already trust it drinking it more often.',
+        items: [
+          { t: 'A clear role', d: 'For mothers of picky eaters, MOO-RE is the drink for one small daily moment.' },
+          { t: 'From occasional to daily', d: 'Move usage from “only when my child won’t eat” to one glass every afternoon.' },
+          { t: 'Within the label', d: 'Every message stays within MOO-RE’s label claims, as Indonesia’s food authority requires. We talk about a routine, never a cure.' },
+        ] },
+      { type: 'images', label: 'The big idea', title: 'Jam Lahap. Mom nggak sendirian.', cols: 1,
+        items: [{ src: './assets/moore/keyvisual.webp', alt: 'A mother holding a glass of milk as her daughter drinks on the sofa in the afternoon', cap: 'Campaign mood image, generated with AI' }],
+        body: 'Jam Lahap means “eat-well hour”. A set time turns a product into a habit and gives the brand a reason to show up every day, while the line “Mom nggak sendirian” (“you’re not alone, Mom”) answers the insight directly.' },
+      { type: 'cards', cols: 3, tone: 'soft',
+        items: [
+          { tag: '16.00', t: 'One glass, same time every day', d: 'A small ritual before dinner. Easy to remember, easy to repeat, and a moment no other milk brand has claimed.' },
+          { tag: 'The routine', t: 'No forcing, no screens', d: 'It follows common advice for picky eaters: regular snack times, a calm table and no pressure to finish.' },
+          { tag: 'The line', t: 'Mom nggak sendirian', d: 'Every touchpoint speaks to the mother first: her worry is normal, and other mothers are going through it too.' },
+        ] },
+      { type: 'cards', label: 'Campaign phasing', title: 'Ten months, three jobs: get known, become routine, get passed on.', cols: 3, numbered: true,
+        items: [
+          { t: 'Discover · months 1–2', d: 'Connect MOO-RE with picky-eating support through nutritionist content, a WhatsApp Channel and ads that open a WhatsApp chat.', foot: '25% of budget' },
+          { t: 'Routine · months 3–6', d: 'Build the daily habit with the Jam Lahap Class, a 21-day program run by nutritionists in closed WhatsApp groups.', foot: '40% of budget' },
+          { t: 'Advocate · months 7–10', d: 'Turn the best class graduates into Mom Jam Lahap ambassadors who hand out samples to friends and at school, with their own invitation code.', foot: '35% of budget' },
+        ] },
+      /* ---------- mechanics ---------- */
+      { type: 'cards', label: 'How it works', title: 'Built on the app mothers already open every day.', cols: 2, tone: 'soft',
+        body: '94.8% of Indonesian mothers use WhatsApp, and its Channel and Business tools are free. So there’s no app to download, no website to visit and no form to fill.',
+        items: [
+          { t: 'Jam Lahap Class', list: ['21 days, 50–100 mothers per group, led by a nutritionist', 'Join by sending a photo of one MOO-RE receipt', 'A 4 PM reminder every day, menu ideas and a weekly live Q&A', 'Three receipts earn a gift hamper, from a fixed stock so the cost can’t run over'] },
+          { t: 'Mom Jam Lahap ambassadors', list: ['2–3 graduates per class, about 100 in total: finished the 21 days, sent at least two receipts and were nominated by their nutritionist', 'Each gets 10 samples with invitation cards printed with her own code, such as JAMLAHAP-RINA', 'A friend tries MOO-RE at home first, then joins the class with a receipt like everyone else', 'A fixed fee for the activity, paid in two parts, never a commission per sale'] },
+        ] },
+      { type: 'images', label: 'The class in WhatsApp', cols: 1,
+        items: [{ src: './assets/moore/whatsapp.png', alt: 'WhatsApp mockups: the daily 4 PM reminder in a Jam Lahap Class group, and a friend joining with a receipt and an ambassador’s code', cap: 'Mockup: the 4 PM reminder (left) and a friend joining after trying a sample (right)' }] },
+      { type: 'images', label: 'Mom to mom', title: 'The best invitation is a sample from a friend.', cols: 1,
+        body: ['Around 88% of people in Southeast Asia trust recommendations from people they know more than any ad, and about a third of shoppers who try a sample buy the product. Referral rewards, on the other hand, work best for high-margin products, and kids’ milk isn’t one.',
+          'So word-of-mouth here runs on samples, not codes. The code only records who brought whom, and ambassadors are open about being ambassadors and only talk about the routine, never health claims.'],
+        items: [{ src: './assets/moore/referral.webp', alt: 'Two mothers on a porch, one showing the other something on her phone', cap: 'Campaign mood image, generated with AI' }] },
+      /* ---------- measure ---------- */
+      { type: 'cards', label: 'Budget', title: 'Most of the money goes to voices mothers trust, not to media.', cols: 3,
+        body: 'Mothers trust health professionals (94%) and other mothers (73%) far more than influencers (47%). So over half of the IDR 800 million pays for nutritionists, real mothers and the community, and media only amplifies them.',
+        items: [
+          { tag: 'IDR 470 Mn · 59%', t: 'Trusted voices & community', list: ['Nano creators & mom ambassadors: 160 Mn', 'Community, classes & sampling: 160 Mn', 'Nutritionists: 120 Mn', 'Hampers, fixed stock: 30 Mn'] },
+          { tag: 'IDR 200 Mn · 25%', t: 'Media', list: ['Paid social & retail media: 200 Mn'] },
+          { tag: 'IDR 130 Mn · 16%', t: 'Running it', list: ['Research & contingency: 70 Mn', 'WhatsApp operations & admin: 60 Mn'] },
+        ] },
+      { type: 'cards', label: 'KPIs', title: 'Measure what the campaign itself records.', cols: 4,
+        body: 'Each target comes from data the program produces on its own: receipts, sign-ups, code use and store sales. They are proposed targets, to be adjusted after the first two months.',
+        items: [
+          { tag: '≥ 2×', t: 'Repeat purchase', d: 'Class members buy MOO-RE at least twice during the program, counted from their receipts.' },
+          { tag: '≥ 20%', t: 'Sample to purchase', d: 'Friends who got a sample and sent a receipt within 14 days. Sampling research puts this at 11–35%.' },
+          { tag: '≥ 20%', t: 'Joined through a friend', d: 'Share of new class members who joined with an ambassador’s code.' },
+          { tag: 'Year 1', t: 'Stop the decline', d: 'Hold market share in the first year, tracked through minimarket and supermarket sales data.' },
+        ] },
+      { type: 'quote', quote: 'With a small budget, the strongest move wasn’t to shout louder. It was to own a moment no one else had claimed.',
+        body: 'This project sharpened how I go from a business problem to a human insight, keep an idea within budget and regulation, and design a program where every step leaves data behind.' },
     ],
   },
 };
