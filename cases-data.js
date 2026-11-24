@@ -696,11 +696,15 @@ const CASES = {
           { src: './assets/primaku/story.jpg', alt: 'Instagram story version of the key visual', cap: 'Story' },
         ] },
       { type: 'images', label: 'Print and vehicles', title: 'The same idea, read from across the street.', cols: 1, stack: true,
-        body: 'For the vaccine van wrap, an X-banner and a backdrop for school events, I kept only the headline, the characters and the logo at full size. Smaller text only goes where people stand close enough to read it.',
-        items: [{ src: './assets/primaku/van-artwork.jpg', alt: 'Full-wrap artwork for the PrimaKu vaccine van', cap: 'Van full-wrap artwork' }] },
+        body: ['For the vaccine van I made two directions. The full wrap turns the whole van PrimaKu blue and is hard to miss; the side panel keeps a white van and adds one long banner, which is cheaper to print and easier to swap after the campaign.',
+          'On the van, an X-banner and a school event backdrop, I kept only the headline, the characters and the logo at full size. Smaller text only goes where people stand close enough to read it.'],
+        items: [
+          { src: './assets/primaku/van-artwork.jpg', alt: 'Full-wrap artwork for the PrimaKu vaccine van', cap: 'Option 1 · Full-wrap artwork' },
+          { src: './assets/primaku/caravan.jpg', alt: 'Side-panel artwork for the PrimaKu vaccine van', cap: 'Option 2 · Side-panel artwork' },
+        ] },
       { type: 'images', cols: 3, row: true,
         items: [
-          { src: './assets/primaku/van-mockup.jpg', alt: 'Mockup of the PrimaKu van wrap', cap: 'Van wrap' },
+          { src: './assets/primaku/van-mockup.jpg', alt: 'Mockup of the full wrap on the van', cap: 'Option 1 on the van' },
           { src: './assets/primaku/xbanner-mockup.jpg', alt: 'Mockup of the PrimaKu X-banner', cap: 'X-banner, 60 × 160 cm' },
           { src: './assets/primaku/backdrop-mockup.jpg', alt: 'Mockup of the school event backdrop', cap: 'School event backdrop' },
         ] },
