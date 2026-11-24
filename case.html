@@ -86,7 +86,7 @@
           ${it.foot ? `<b class="cs-card__foot">${esc(it.foot)}</b>` : ''}
         </div>`).join('')}</div>`,
       flow: b => `<div class="cs-flow rv">${b.steps.map(s => `<span>${esc(s)}</span>`).join('<i aria-hidden="true">→</i>')}</div>`,
-      images: b => `<div class="cs-imgs cols-${b.cols || 1}${b.phones ? ' is-phones' : ''}" style="--n:${b.items.length}" data-stagger>${b.items.map(it => `
+      images: b => `<div class="cs-imgs cols-${b.cols || 1}${b.phones ? ' is-phones' : ''}${b.row ? ' is-row' : ''}" style="--n:${b.items.length}" data-stagger>${b.items.map(it => `
         <figure class="rv">${img(it.src, it.alt)}${it.cap || it.d ? `<figcaption>${it.cap ? `<b>${esc(it.cap)}</b>` : ''}${it.d ? `<span>${esc(it.d)}</span>` : ''}</figcaption>` : ''}</figure>`).join('')}</div>`,
       beforeafter: b => `<div class="cs-ba" data-stagger>
         <figure class="rv"><span class="cs-pill">Before</span>${img(b.before, 'Before')}</figure>
@@ -155,6 +155,9 @@
     // only truly tall images (phone screens, vertical videos) are shown whole inside their 16:9 frame;
     // dashboards and everything else fill the frame, zoomed in from the top
 
+    // a row of mixed sizes (posts, banners, mockups) shares one height: each item widens with its own ratio
+    const fitRow = im => { const f = im.closest('.is-row figure'); if (f && im.naturalWidth) f.style.flexGrow = im.naturalWidth / im.naturalHeight; };
+    main.querySelectorAll('.is-row img').forEach(im => im.complete ? fitRow(im) : im.addEventListener('load', () => fitRow(im), { once: true }));
     const markTall = im => { if (im.naturalHeight > im.naturalWidth * 1.4) im.classList.add('is-tall'); };
     main.querySelectorAll('img').forEach(im => im.complete ? markTall(im) : im.addEventListener('load', () => markTall(im), { once: true }));
     // UTVIP shots are shown whole; blowing the shot's top-left corner up behind it fills the spare frame in its own backdrop colour

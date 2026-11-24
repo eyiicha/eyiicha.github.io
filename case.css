@@ -253,3 +253,16 @@
 #case.cs-videfly-ai .t-flow .cs-flow{flex-wrap:nowrap;max-width:1200px}
 #case.cs-videfly-ai .t-flow .cs-flow span{flex:1 1 0;min-width:0;justify-content:center;white-space:nowrap}
 @media (max-width:900px){ #case.cs-videfly-ai .t-flow .cs-flow{flex-wrap:wrap} #case.cs-videfly-ai .t-flow .cs-flow span{flex:0 0 auto} }
+
+/* Key visual tests (PrimaKu, FEIHE): show every artwork whole, at its own ratio */
+#case.cs-primaku .cs-imgs img,#case.cs-feihe .cs-imgs img,
+#case.cs-primaku .cs-imgs img.is-tall,#case.cs-feihe .cs-imgs img.is-tall{aspect-ratio:auto;object-fit:contain;padding:0}
+#case.cs-primaku .cs-imgs,#case.cs-feihe .cs-imgs{align-items:start}
+#case.cs-feihe .is-split .cs-imgs{max-width:420px;margin-inline:auto}
+/* .is-row: images in one line at equal height, each as wide as its own ratio needs */
+.cs-imgs.is-row{display:flex;align-items:stretch}
+.cs-imgs.is-row figure{flex:1 1 0;min-width:0}
+#case .cs-imgs.is-row img{aspect-ratio:auto;object-fit:contain;padding:0}
+@media (max-width:640px){ .cs-imgs.is-row:not([style*="--n:2"]){flex-wrap:wrap} .cs-imgs.is-row:not([style*="--n:2"]) figure{flex:1 1 40%!important} }
+/* PrimaKu: artwork and mockup pairs are too wide to share a phone row, so they stack */
+@media (max-width:640px){ #case.cs-primaku .cs-imgs.is-row{flex-wrap:wrap} #case.cs-primaku .cs-imgs.is-row figure{flex:1 1 100%!important} #case.cs-primaku .cs-imgs.is-row:not([style*="--n:2"]) figure{flex:1 1 40%!important} }

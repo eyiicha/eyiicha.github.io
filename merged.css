@@ -643,7 +643,7 @@
 .sk-tag,.sk-chip,.sk-face{position:absolute;left:var(--x);top:var(--y);translate:-50% -50%;rotate:var(--r,0deg);scale:0;opacity:0;z-index:3}
 .sk-tag{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 16px 0 8px;border-radius:12px;font-size:15px;font-weight:700;letter-spacing:-.02em;white-space:nowrap;box-shadow:0 12px 26px rgba(102,2,11,.14);transition:box-shadow .25s}
 .sk-tag > span{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.92)}
-.sk-tag > span img{width:26px;height:26px;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15));transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.sk-tag > span img{width:22px;height:22px;object-fit:contain;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
 .sk-tag:hover > span img{transform:scale(1.18) rotate(-8deg)}
 .sk-tag.is-maroon{background:var(--accent);color:#fff}
 .sk-tag.is-soft{background:var(--accent-soft);color:var(--accent)}
