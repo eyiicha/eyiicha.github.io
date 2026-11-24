@@ -232,7 +232,7 @@
       // the middle paper sits in front, so the newest case takes that slot
       if (papers.length > 1) [papers[0], papers[1]] = [papers[1], papers[0]];
       const inside = papers.length
-        ? papers.map(p => `<span class="folder__paper"><img src="${imgSrc(p.img)}" alt="" loading="lazy"></span>`).join('')
+        ? papers.map(p => `<span class="folder__paper"><img src="${imgSrc(p.paper || p.img)}" alt="" loading="lazy"></span>`).join('')
         : '<span class="folder__empty">coming soon</span>';
       return `<div class="folder-wrap rv" data-speed="${[0.05, -0.04, 0.07, -0.03][fi]}">
         <a class="folder" href="projects.html#${f.id}" aria-label="Open the ${f.name} folder">
@@ -269,8 +269,8 @@
 <script>
   /* hero orbit: cards of slightly different sizes and tilts circle the headline */
   (() => {
-    // 14 cards keep the ring evenly spaced; with 8 shots the last two (the oldest projects) appear once
-    const shots = ['teamu/tm-thumb.webp','videfly-product.png','thumbs/gofleet.jpg','videfly-ai.png','nextstep.png','feedup.png','utvip.png','fexplore-cover.webp'];
+    // 14 cards keep the ring evenly spaced; with 10 shots the first four appear twice
+    const shots = ['teamu/tm-thumb.webp','videfly-product.png','thumbs/gofleet.jpg','videfly-ai.png','primaku/orbit.jpg','nextstep.png','feihe/orbit.jpg','feedup.png','utvip.png','fexplore-cover.webp'];
     const sizes = [1, .86, .78, 1.08, .92, 1, .84, 1.04, .9, 1.1, .8, .96, 1, .88, .82, 1.06];
     const tilts = [-4, 3, -2, 5, -6, 2, 4, -3, 1, -5, 6, -1, 3, -4, 2, -2];
     const ring = document.getElementById('ring'), hero = document.getElementById('top');
